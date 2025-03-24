@@ -14,11 +14,6 @@ Includes requirements for the following repositories, cloned from my forks which
 - [HybrIK-TensorRT](https://github.com/gursoyege/HybrIK-TensorRT)
 - [human2humanoid](https://github.com/gursoyege/human2humanoid)
 
-
-## Container Running Script
-
-- **.run.sh:** A shell script to run the Docker container. It supports options to set the image name, container name, and a temporary mode that automatically removes the container after exit.
-
 ## Building the Docker Image
 
 To build the Docker image, run the following command in the repository directory:
@@ -29,6 +24,17 @@ docker build -t <your_image_name> .
 Replace <your_image_name> with your desired image name.
 
 ## Running the Container
+
+First, make sure to install `nvidia-container-toolkit` to your HOST machine.
+
+```bash
+curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dearmor -o /usr/share/keyrings/nvidia-container-toolkit-keyring.gpg && \
+curl -s -L https://nvidia.github.io/libnvidia-container/stable/deb/nvidia-container-toolkit.list | \
+  sed 's#deb https://#deb [signed-by=/usr/share/keyrings/nvidia-container-toolkit-keyring.gpg] https://#g' | \
+  sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list && \
+sudo apt-get update && \
+sudo apt-get install -y nvidia-container-toolkit
+```
 
 The provided `run.sh` script helps to run the container with GPU support and X11 forwarding. It accepts the following arguments:
 
