@@ -4,10 +4,11 @@ This repository provides a Docker-based environment for machine learning and rob
 
 ## Dockerfile Contents
 
-Base Image: Ubuntu 20.04
-Python Version: 3.8
-CUDA Version: 12.1.0
-PyTorch Version: 2.1.2
+Base Image: 
+- Ubuntu 20.04
+- Python: 3.8
+- CUDA: 12.1.0
+- PyTorch: 2.1.2
 
 Includes requirements for the following repositories, cloned from my forks which contain several fixes:
 - [HybrIK](https://github.com/gursoyege/HybrIK)
